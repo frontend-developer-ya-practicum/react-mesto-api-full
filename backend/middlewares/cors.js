@@ -1,5 +1,7 @@
 const allowedCors = [
   'localhost:3000',
+  'http://mesto-hikjik.students.nomoredomains.club',
+  'https://mesto-hikjik.students.nomoredomains.club',
 ];
 
 const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
