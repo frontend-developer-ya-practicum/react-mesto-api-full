@@ -26,7 +26,7 @@ module.exports.login = (req, res, next) => {
           maxAge: 3600000,
           httpOnly: true,
         })
-        .send({});
+        .send({ token });
     })
     .catch((err) => {
       next(new UnauthorizedError(err.message));
