@@ -42,7 +42,7 @@ function App() {
         setCards(cards);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [loggedIn]);
 
   useEffect(() => {
     tokenCheck();
