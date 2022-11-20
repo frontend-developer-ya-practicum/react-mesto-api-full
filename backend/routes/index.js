@@ -6,6 +6,12 @@ const NotFoundError = require('../errors/not-found');
 const { validateRegisterBody, validateLoginBody } = require('../middlewares/validation');
 const { register, login } = require('../controllers/auth');
 
+router.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
+
 router.post('/signup', validateRegisterBody, register);
 router.post('/signin', validateLoginBody, login);
 
