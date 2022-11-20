@@ -1,20 +1,20 @@
-import { useState, useEffect } from "react";
 import { Redirect, Route, Switch, useHistory } from "react-router-dom";
+import { useEffect, useState } from "react";
 
-import api from "../utils/api";
-import Header from "./Header";
-import Footer from "./Footer";
-import Main from "./Main";
-import ImagePopup from "./ImagePopup";
-import { CurrentUserContext } from "../contexts/CurrentUserContext";
-import EditProfilePopup from "./EditProfilePopup";
-import EditAvatarPopup from "./EditAvatarPopup";
 import AddPlacePopup from "./AddPlacePopup";
+import { CurrentUserContext } from "../contexts/CurrentUserContext";
 import DeletePlacePopup from "./DeletePlacePopup";
-import ProtectedRoute from "./ProtectedRoute";
-import Login from "./Login";
-import Register from "./Register";
+import EditAvatarPopup from "./EditAvatarPopup";
+import EditProfilePopup from "./EditProfilePopup";
+import Footer from "./Footer";
+import Header from "./Header";
+import ImagePopup from "./ImagePopup";
 import InfoTooltip from "./InfoTooltip";
+import Login from "./Login";
+import Main from "./Main";
+import ProtectedRoute from "./ProtectedRoute";
+import Register from "./Register";
+import api from "../utils/api";
 import auth from "../utils/auth";
 
 function App() {
@@ -160,6 +160,7 @@ function App() {
       .then((data) => {
         setIsAuthSuccess(true);
         setIsInfoTooltipPopupOpen(true);
+        setIsSubmitting(false);
         history.push("/sign-in");
       })
       .catch((err) => {
@@ -179,6 +180,7 @@ function App() {
           localStorage.setItem("token", data.token);
           setLoggedIn(true);
           setEmail(email);
+          setIsSubmitting(false);
           history.push("/");
         }
       })

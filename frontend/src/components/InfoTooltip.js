@@ -1,5 +1,5 @@
-import successIcon from "../images/register-success.svg";
 import errorIcon from "../images/register-error.svg";
+import successIcon from "../images/register-success.svg";
 
 function InfoTooltip({ isOpen, isAuthSuccess, onClose }) {
   const successMessage = "Вы успешно зарегистрировались!";
@@ -15,11 +15,14 @@ function InfoTooltip({ isOpen, isAuthSuccess, onClose }) {
         onClose();
       }}
     >
-      <div className="popup__icon-container">
+      <div
+        className="popup__icon-container"
+        onClick={(e) => {
+          e.stopPropagation();
+        }}
+      >
         <button
-          onClick={(e) => {
-            e.stopPropagation();
-          }}
+          onClick={onClose}
           className="popup__close"
           type="button"
           aria-label="Закрыть окно"
