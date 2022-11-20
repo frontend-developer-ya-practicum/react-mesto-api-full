@@ -1,0 +1,16 @@
+.register__sign-in-link {
+  margin: 0;
+  font-family: "Inter", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.7s ease;
+}
+
+.register__sign-in-link:hover {
+  opacity: 0.6;
+}

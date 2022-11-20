@@ -1,0 +1,9 @@
+.register__sign-in {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  top: 30px;
+  margin-top: -17px;
+}
